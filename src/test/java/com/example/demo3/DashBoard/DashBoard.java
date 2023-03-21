@@ -128,7 +128,7 @@ public class DashBoard {
     public void DownloadSurveyDepartmentChartFilter() throws InterruptedException {
         SurveyDepartmentChartFilter();
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("#apexcharts26p68hwc > div.apexcharts-toolbar > div.apexcharts-menu-icon > svg > path:nth-child(2)")).click();
+        driver.findElement(By.cssSelector("#apexchartsb94bhmt1 > div:nth-child(4) > div:nth-child(1) > svg:nth-child(1)")).click();
     }
 
 }

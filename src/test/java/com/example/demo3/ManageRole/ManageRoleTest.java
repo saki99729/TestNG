@@ -3,6 +3,7 @@ package com.example.demo3.ManageRole;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -20,6 +21,12 @@ public class ManageRoleTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://nps.monoroc.com/");
     }
+    @AfterMethod
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(5000);
+        driver.quit();
+    }
+
 
     public static  void Logincode() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div/div[2]/div[3]/div/div[2]/form/div[1]/input")).sendKeys("nps@admin.com");
@@ -55,8 +62,22 @@ public class ManageRoleTest {
     }
 
     @Test
+    public void UpdateRole() throws InterruptedException {
+        Logincode();
+        driver.findElement(By.cssSelector(".table-body > tr:nth-child(1) > td:nth-child(3) > svg:nth-child(1)")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/form/div/input")).clear();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/form/div/input")).sendKeys("survey creator");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/button[2]")).click();
+    }
+
+    @Test
     public void DeleteRole() throws InterruptedException {
         Logincode();
-        driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div/div/div/div[2]/table/tbody/tr[1]/td[3]/svg[2]")).click();
+        driver.findElement(By.cssSelector(".table-body > tr:nth-child(1) > td:nth-child(3) > svg:nth-child(2)")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[2]/div/div[6]/button[1]")).clear();
     }
 }

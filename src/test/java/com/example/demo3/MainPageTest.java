@@ -23,10 +23,11 @@ public class MainPageTest {
         new MainPage(driver);
     }
 
-   /*@AfterMethod
-    public void tearDown() {
+   @AfterMethod
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(5000);
         driver.quit();
-    }*/
+    }
 
     @Test
     public void Login_valid() throws InterruptedException {
