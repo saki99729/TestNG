@@ -1,4 +1,4 @@
-package com.example.demo3.DashBoard;
+package com.example.demo3.Admin.DashBoard;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

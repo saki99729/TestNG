@@ -1,6 +1,5 @@
-package com.example.demo3.DashBoard;
+package com.example.demo3.Admin.DashBoard;
 
-import com.example.demo3.MainPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,16 +22,13 @@ public class DashBoard {
         driver.get("https://nps.monoroc.com/");
 
     }
-
-  /*  @AfterMethod
-    public void tearDown() {
+      @AfterMethod
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(3000);
         driver.quit();
-    }*/
-
-    @Test
-    public void SurveyDepartmentwise()
-    {
     }
+
+
 
     @Test
     public void mostRatedQuestion() throws InterruptedException

@@ -58,15 +58,7 @@ public class MainPageTest {
         Thread.sleep(5000);
         driver.findElement(By.xpath("/html/body/div/div[2]/div[3]/div/div[2]/form/div[3]/button")).click();
         Thread.sleep(5000);
-        String at = driver.getTitle();
-        String et = "Avenir Health - NPS Monitor System";
-        System.out.println("get Titile :"+at);
-        if(at.equals(et))
-        {
-            System.out.println("Test Successful");
-        }else{
-            System.out.println("Test Failuar");
-        }
+       driver.findElement(By.xpath("/html/body/div/div[1]")).isDisplayed();
     }
 
     @Test
@@ -77,6 +69,7 @@ public class MainPageTest {
         Thread.sleep(5000);
         driver.findElement(By.xpath("/html/body/div/div[2]/div[3]/div/div[2]/form/div[3]/button")).click();
         Thread.sleep(5000);
+        driver.findElement(By.xpath("/html/body/div/div[1]")).isDisplayed();
     }
 
     @Test

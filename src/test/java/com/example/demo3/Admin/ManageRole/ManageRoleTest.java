@@ -1,4 +1,4 @@
-package com.example.demo3.ManageRole;
+package com.example.demo3.Admin.ManageRole;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -51,6 +51,8 @@ public class ManageRoleTest {
         Logincode();
         driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div/div/div/div[1]/button")).click();
         driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/button[2]")).click();
+        Thread.sleep(500);
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/form/div/small")).isDisplayed();
     }
 
     @Test
@@ -72,12 +74,25 @@ public class ManageRoleTest {
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/button[2]")).click();
     }
+//this must re checked//
+    @Test
+    public void UpdateRoleNullValue() throws InterruptedException {
+        Logincode();
+        driver.findElement(By.cssSelector(".table-body > tr:nth-child(1) > td:nth-child(3) > svg:nth-child(1)")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/form/div/input")).clear();
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/button[2]")).click();
+        Thread.sleep(500);
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/form/div/small")).isDisplayed();
+    }
 
     @Test
     public void DeleteRole() throws InterruptedException {
         Logincode();
         driver.findElement(By.cssSelector(".table-body > tr:nth-child(1) > td:nth-child(3) > svg:nth-child(2)")).click();
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[2]/div/div[6]/button[1]")).clear();
+        driver.findElement(By.xpath("/html/body/div[2]/div/div[6]/button[1]")).click();
     }
 }
